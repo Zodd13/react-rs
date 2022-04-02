@@ -1,0 +1,25 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+
+    .registration{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        h1{
+            margin: auto;
+        }
+    }
+
+    .login{
+        display: flex;
+        flex-direction: column;
+        width: auto;  
+        h1{
+            margin: auto;
+        }      
+    }
+}
