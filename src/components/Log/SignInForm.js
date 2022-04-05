@@ -19,11 +19,11 @@ export default function SignInForm() {
       },
     })
       .then((res) => {
-        console.log(Response)
         if (res.data.errors) {
           emailError.innerHTML = res.data.error;
           passwordError.innerHTML = res.data.error;
         } else {
+          console.log(res)
           window.location = "/";
         }
       })
