@@ -23,7 +23,9 @@ export default function SignInForm() {
           emailError.innerHTML = res.data.error;
           passwordError.innerHTML = res.data.error;
         } else {
-          console.log(res)
+          console.log(res.data)
+          localStorage.setItem('user', res.data.userId)
+          localStorage.setItem('token', res.data.token)
           window.location = "/";
         }
       })

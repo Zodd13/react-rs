@@ -8,15 +8,21 @@ const App = () => {
   const [uid, setUid] = useState(null);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchToken = async () => {
       await axios({
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
         method: "get",
-        url: `${process.env.REACT_APP_API_URL}api/auth/jwtid`,
+        url: `${process.env.REACT_APP_API_URL}api/auth/profile`,
       })
-        .then((res) => setUid(res.data))
-        .catch((err) => console.log("No user"));
-    }
-    fetchUser();
+        .then((res) => {
+          console.log(uid);
+          setUid(res.data.id);
+        })
+        .catch((err) => console.log(err));
+    };
+    fetchToken();
   }, [uid]);
 
   return (
